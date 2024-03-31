@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Hotmail</string>
+    <string name="name">Monica</string>
+    <string name="correo">Hotmail</string>
+    <string name="asunto">Asunto</string>
+    <string name="cuerpo">Cuerpo del correo enviado.</string>
+    <string name="hora">10:00 AM</string>
+</resources>
