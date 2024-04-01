@@ -26,20 +26,21 @@
             android:id="@+id/asuntoTextView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             android:layout_marginStart="20dp"
             android:text="@string/asunto"
-            android:textSize="25sp"
+            android:textSize="35sp"
             android:textStyle="bold"
             android:textColor="@color/black"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp">
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iconoImageView2"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="20dp"
                 android:paddingLeft="14dp"
                 android:paddingRight="14dp"
@@ -51,7 +52,7 @@
                 android:layout_marginTop="15dp"
                 android:text="@string/app_name"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/horaTextView2"
@@ -59,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
                 android:text="@string/hora"
-                android:textSize="18sp"
+                android:textSize="23sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
         </LinearLayout>
@@ -68,14 +69,87 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp">
             <TextView
                 android:id="@+id/cuerpoTextView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:text="@string/cuerpo"
-                android:textSize="18sp"/>
+                android:textSize="22sp"/>
+            <TextView
+                android:id="@+id/descripTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Descripcion del cuerpo"
+                android:textSize="22sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:padding="3dp"
+                android:gravity="center"
+                android:background="@drawable/style_borde">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Responder"
+                    android:textColor="@color/azulOscuro"
+                    android:textSize="20sp"/>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/responder"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:padding="3dp"
+                android:gravity="center"
+                android:background="@drawable/style_borde">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reenviar"
+                    android:textColor="@color/azulOscuro"
+                    android:textSize="20sp"/>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/reenviar"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:padding="3dp"
+                android:gravity="center"
+                android:background="@drawable/style_borde">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Archivar"
+                    android:textColor="@color/azulOscuro"
+                    android:textSize="20sp"/>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/archivar"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

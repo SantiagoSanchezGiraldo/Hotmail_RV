@@ -5,4 +5,33 @@
     <string name="asunto">Asunto</string>
     <string name="cuerpo">Cuerpo del correo enviado.</string>
     <string name="hora">10:00 AM</string>
+    <string-array name="descripciones">
+        <item>
+            Mi nombre es Julian Ramirez, soy programador backend,
+            manejo Java, Ruby y PHP. En este correo te adjunto mi
+            CV u hoja de vida.
+        </item>
+        <item>
+            Tenemos ciertas propuestas para la proxima actualización
+            y para ello necesitamos que revisemos ciertos componentes,
+            requisitos para la compatibilidad del proyecto con otros
+            dispositivos.
+        </item>
+        <item>
+            Ya hemos reunido bastante material para darle una nueva
+            iamgen a nuestra pagina Web, te lo vamos a dejar un link
+            a la carpeta en drive donde estaran los nuevos asets para
+            su revision.
+        </item>
+        <item>
+            Este correo es un pequeño recuerdo de que se acerca la fecha
+            de pago de su factura, debes 152.800 COP$. Puedes pagar varios
+            medios, Efecty, Visa Master Card y PSE.
+        </item>
+        <item>
+            Vamos a festejar mi cumple años el 7 de mayo a las 4PM en mi
+            casa, vamos cantar, bailar, beber y comer unas comidas riquizimas,
+            para que no te lo pierdas.
+        </item>
+    </string-array>
 </resources>

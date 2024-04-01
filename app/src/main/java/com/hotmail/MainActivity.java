@@ -1,5 +1,6 @@
 package com.hotmail;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -13,8 +14,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements RecyclerViewerInterface{
     List<ListaElementos> elementos;
+    String[] descrip = {
+            "Mi nombre es Julian Ramirez, soy programador backend, manejo Java, Ruby y PHP. En este correo te adjunto mi CV u hoja de vida.",
+            "Tenemos ciertas propuestas para la proxima actualización y para ello necesitamos que revisemos ciertos componentes, requisitos para la compatibilidad del proyecto con otros dispositivos.",
+            "Ya hemos reunido bastante material para darle una nueva iamgen a nuestra pagina Web, te lo vamos a dejar un link a la carpeta en drive donde estaran los nuevos asets para su revision.",
+            "Este correo es un pequeño recuerdo de que se acerca la fecha de pago de su factura, debes 152.800 COP$. Puedes pagar varios medios, Efecty, Visa Master Card y PSE.",
+            "Vamos a festejar mi cumple años el 7 de mayo a las 4PM en mi casa, vamos cantar, bailar, beber y comer unas comidas riquizimas, para que no te lo pierdas."
+    };
     int[] imagen ={
             R.drawable.m1,
             R.drawable.m3,
@@ -38,17 +46,30 @@ public class MainActivity extends AppCompatActivity {
 
     public void  init(){
         elementos = new ArrayList<>();
-        elementos.add(new ListaElementos(imagen[0],"Pedro","Hoja de vida", "Hola, quisiera trabajar aqui","5:30 PM"));
-        elementos.add(new ListaElementos(imagen[1], "Julian","Revision de Proyecto", "Tenemos que reunirnos para revisar el proyecto","7:50 AM"));
-        elementos.add(new ListaElementos(imagen[2],"Monica","Update PaginaWeb", "Tenemos listo los asets para actualizar la pagina","8:28 AM"));
-        elementos.add(new ListaElementos(imagen[3], "Samira","Recuerdo de Pago", "Por favor recuerde pagar su factura ","7:00 AM"));
-        elementos.add(new ListaElementos(imagen[4], "Daniel","Fiesta Invitacion", "Ven mi buen amigo a mi fiesta a las 4PM","2:04 PM"));
+        elementos.add(new ListaElementos(imagen[0],"Pedro","Hoja de vida", "Hola, quisiera trabajar aqui","5:30 PM", descrip[0]));
+        elementos.add(new ListaElementos(imagen[1], "Julian","Revision de Proyecto", "Tenemos que reunirnos para revisar el proyecto","7:50 AM", descrip[1]));
+        elementos.add(new ListaElementos(imagen[2],"Monica","Update PaginaWeb", "Tenemos listo los asets para actualizar la pagina","8:28 AM",descrip[2]));
+        elementos.add(new ListaElementos(imagen[3], "Samira","Recuerdo de Pago", "Por favor  pagar su factura ","7:00 AM",descrip[3]));
+        elementos.add(new ListaElementos(imagen[4], "Daniel","Fiesta Invitacion", "Ven mi queridisimo amigo a mi fiesta","2:04 PM",descrip[4]));
 
 
-        ListAdapter listAdapter = new ListAdapter(elementos,this);
+        ListAdapter listAdapter = new ListAdapter(elementos,this, this);
         RecyclerView recyclerView = findViewById(R.id.listRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(listAdapter);
+    }
+
+    @Override
+    public void OnItemClick(int position) {
+        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        intent.putExtra("Name", elementos.get(position).getName());
+        intent.putExtra("Asunto", elementos.get(position).getAsunto());
+        intent.putExtra("Cuerpo", elementos.get(position).getCuerpo());
+        intent.putExtra("Hora", elementos.get(position).getHora());
+        intent.putExtra("Imagen", elementos.get(position).getImagen());
+        intent.putExtra("Descrip", elementos.get(position).getDescrip());
+
+        startActivity(intent);
     }
 }
