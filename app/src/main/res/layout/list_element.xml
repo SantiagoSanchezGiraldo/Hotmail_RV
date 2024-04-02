@@ -78,6 +78,15 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:layout_alignParentEnd="true"/>
+
+            <ImageView
+                android:id="@+id/lectura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="-46dp"
+                android:layout_toStartOf="@+id/horaTextView"
+                android:src="@drawable/leido"
+                android:visibility="gone"/>
         </RelativeLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

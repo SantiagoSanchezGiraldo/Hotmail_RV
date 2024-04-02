@@ -47,6 +47,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         ImageView iconImage;
         TextView name, asunto, cuerpo, hora;
 
+        ImageView leer;
+
         public ViewHolder(@NonNull View itemView, RecyclerViewerInterface recyclerViewerInterface) {
             super(itemView);
             iconImage = itemView.findViewById(R.id.iconoImageView);
@@ -54,6 +56,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             asunto = itemView.findViewById(R.id.asuntoTextView);
             cuerpo = itemView.findViewById(R.id.cuerpoTextView);
             hora = itemView.findViewById(R.id.horaTextView);
+            leer = itemView.findViewById(R.id.lectura);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -74,6 +77,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             asunto.setText(item.getAsunto());
             cuerpo.setText(item.getCuerpo());
             hora.setText(item.getHora());
+            if (item.isLeer()){
+                leer.setVisibility(View.VISIBLE);
+            }else{
+                leer.setVisibility(View.GONE);
+            }
         }
     }
 }
