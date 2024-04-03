@@ -43,7 +43,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         return myData.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder{
         ImageView iconImage;
         TextView name, asunto, cuerpo, hora;
 
@@ -56,7 +56,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             asunto = itemView.findViewById(R.id.asuntoTextView);
             cuerpo = itemView.findViewById(R.id.cuerpoTextView);
             hora = itemView.findViewById(R.id.horaTextView);
-            leer = itemView.findViewById(R.id.lectura);
+            leer = itemView.findViewById(R.id.lecturaImageView);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -64,6 +64,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
                     if (recyclerViewerInterface != null){
                         int pos = getAdapterPosition();
                         if (pos != RecyclerView.NO_POSITION){
+                            ListaElementos item = myData.get(pos);
+                            item.setLeer(true);
+                            notifyItemChanged(pos);
                             recyclerViewerInterface.OnItemClick(pos);
                         }
                     }

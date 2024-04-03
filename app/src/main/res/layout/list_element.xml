@@ -80,7 +80,7 @@
                 android:layout_alignParentEnd="true"/>
 
             <ImageView
-                android:id="@+id/lectura"
+                android:id="@+id/lecturaImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="-46dp"

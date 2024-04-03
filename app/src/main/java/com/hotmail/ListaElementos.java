@@ -20,7 +20,7 @@ public class ListaElementos {
     }
 
     public void setLeer(boolean leido){
-        leer = leido;
+        this.leer = leido;
     }
 
     public String getName() {

@@ -64,10 +64,6 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewerInt
 
     @Override
     public void OnItemClick(int position) {
-        ListaElementos selected = elementos.get(position);
-        selected.setLeer(true);
-        saveStatus();
-
         Intent intent = new Intent(MainActivity.this, MainActivity2.class);
         intent.putExtra("Name", elementos.get(position).getName());
         intent.putExtra("Asunto", elementos.get(position).getAsunto());
@@ -77,21 +73,5 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewerInt
         intent.putExtra("Descrip", elementos.get(position).getDescrip());
 
         startActivity(intent);
-    }
-
-    private void loadReadStatus() {
-        SharedPreferences sharedPreferences = getSharedPreferences("EmailReadStatus", Context.MODE_PRIVATE);
-        for (ListaElementos correo : elementos) {
-            correo.setLeer(sharedPreferences.getBoolean(correo.getDescrip(), false));
-        }
-    }
-
-    public void saveStatus(){
-        SharedPreferences sharedPreferences = getSharedPreferences("EmailReadStatus", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        for (ListaElementos correo : elementos) {
-            editor.putBoolean(correo.getDescrip(),correo.isLeer());
-        }
-        editor.apply();
     }
 }
